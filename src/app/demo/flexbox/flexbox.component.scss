@@ -1,0 +1,16 @@
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex-item{
+  width: 200px;
+  height: 250;
+  background: tomato;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  line-height: 150px;
+  margin-top: 10px;
+}

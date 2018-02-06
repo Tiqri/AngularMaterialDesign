@@ -1,0 +1,22 @@
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.example-card{
+
+  background: #e5e7e7;
+  width: 90%;
+  }
+
+
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex-item{
+  width: 49%;
+  margin-top: 10px;
+}

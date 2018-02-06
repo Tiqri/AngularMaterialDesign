@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" >
+  
+  <button mat-button class="sideNav-toggle" (click)="toggleSideNav.emit()">
+      <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>Team Dashboard</span>
+  
+  <span class="example-spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu"><mat-icon >more_vert</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openAddEmployeeDialog()">Add Employee</button>
+      <button mat-menu-item >Employee Archive</button>
+      <button mat-menu-item (click)="toggleTheme.emit()">Change Theme</button>
+    </mat-menu>
+    
+</mat-toolbar>
+

@@ -1,0 +1,33 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav {
+  width: 200px;
+  background: #009688;
+
+  @media (max-width: 720px) {
+       width: 120px;
+    }
+}
+
+.wrapper{
+  //margin: 50px;
+}
+
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  // align-items: center;
+  // justify-content: center;
+  background: whitesmoke;
+}
+
+.left-nav-font{
+  color: #023732
+}

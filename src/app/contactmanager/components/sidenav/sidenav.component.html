@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-container" [class.dark-theme]="isDarkTheme" autosize>
+  <mat-drawer #drawer class="example-sidenav mat-elevation-z10" mode="side"  (keydown.escape)="close('escape')"
+  [opened]="!isScreen720()">
+  <mat-toolbar color="primary" >Employees</mat-toolbar>
+
+  <mat-nav-list>
+    <mat-list-item *ngFor="let user of users | async">
+      <a class="left-nav-font" matLine [routerLink]="['/contactmanager', user.id]">
+        <mat-icon svgIcon="{{user.avatar}}"></mat-icon> {{ user.name }}
+        </a>
+
+    </mat-list-item>
+  </mat-nav-list>
+   <p>
+      <button mat-button (click)="drawer.toggle()">Close</button>
+    </p>
+  </mat-drawer>
+
+  <div>
+    <app-toolbar (toggleTheme)="toggleTheme()" (toggleSideNav)="drawer.toggle()"></app-toolbar>
+    <p>
+      <button mat-button (click)="drawer.toggle()">View Employees</button>
+    </p>
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>
