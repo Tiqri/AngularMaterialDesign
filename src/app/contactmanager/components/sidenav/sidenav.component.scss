@@ -1,3 +1,15 @@
+
+
+@import '~@angular/material/theming';
+
+// Import your custom input theme file so you can call the custom-input-theme function
+@import './sidenav-theme.scss';
+
+
+@mixin custom-theme( $theme ) {
+  @include mat-form-field( $theme );
+}
+
 .example-container {
   position: absolute;
   top: 0;
@@ -26,6 +38,7 @@
   // align-items: center;
   // justify-content: center;
   background: whitesmoke;
+  
 }
 
 .left-nav-font{

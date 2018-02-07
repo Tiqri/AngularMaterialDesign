@@ -1,0 +1,25 @@
+// Import all the tools needed to customize the theme and extract parts of it
+@import '~@angular/material/theming';
+@include mat-core();
+
+$podshark-light-primary: mat-palette($mat-orange); //white
+$podshark-light-accent:  mat-palette($mat-pink, A200, A100, A400);
+$podshark-light-warn:    mat-palette($mat-red);
+
+$custom-theme: mat-light-theme( $podshark-light-primary, $podshark-light-accent, $podshark-light-warn);
+
+@mixin mat-form-field($theme ) {
+
+  $primary: map-get( $theme, primary);
+  $warn: map-get($theme, warn);
+
+  mat-form-field {
+    .example-sidenav {
+      background-color: mat-color($mat-orange) !important; // -> THIS IS RIGHT :)
+    }
+    // .example-card {
+    //   background-color: mat-color($primary) !important;
+    // }
+  }
+}
+

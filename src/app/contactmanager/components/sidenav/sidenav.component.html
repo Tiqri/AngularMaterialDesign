@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container" [class.dark-theme]="isDarkTheme" autosize>
-  <mat-drawer #drawer class="example-sidenav mat-elevation-z10" mode="side"  (keydown.escape)="close('escape')"
+  <mat-drawer #drawer class="example-sidenav mat-elevation-z10" mode="side" position="start"  (keydown.escape)="close('escape')"
   [opened]="!isScreen720()">
   <mat-toolbar color="primary" >Employees</mat-toolbar>
 
@@ -16,13 +16,48 @@
     </p>
   </mat-drawer>
 
+ <mat-drawer #rightDrawer class="example-sidenav mat-elevation-z10" mode="over" position="end" (keydown.escape)="close('escape')">
+  <mat-toolbar color="primary" >Employees</mat-toolbar>
+
+  <mat-nav-list>  
+    <mat-list-item *ngFor="let user of users | async">
+      <a class="left-nav-font" matLine [routerLink]="['/contactmanager', user.id]">
+        <mat-icon svgIcon="{{user.avatar}}"></mat-icon> {{ user.name }}
+        </a>
+
+    </mat-list-item>
+  </mat-nav-list>
+   <p>
+      <button mat-button (click)="rightDrawer.toggle()">Close</button>
+    </p>
+  </mat-drawer>
+
   <div>
     <app-toolbar (toggleTheme)="toggleTheme()" (toggleSideNav)="drawer.toggle()"></app-toolbar>
     <p>
       <button mat-button (click)="drawer.toggle()">View Employees</button>
+      <button mat-button  (click)="rightDrawer.toggle()">Admin Panel</button>
     </p>
     <div class="wrapper">
       <router-outlet></router-outlet>
     </div>
   </div>
 </mat-drawer-container>
+
+<!--
+<mat-sidenav-container>
+
+    <mat-sidenav #right position="start">
+      Left side nav
+    </mat-sidenav>
+
+    <mat-sidenav #left position="end">
+      Right side nav
+    </mat-sidenav>
+
+<div>
+    <button mat-button (click)="right.open()">right</button>
+    <button mat-button (click)="left.open()">left</button>
+</div>
+
+</mat-sidenav-container>-->
