@@ -1,0 +1,11 @@
+
+$material-rnd-primary : mat-palette($mat-teal, 800, 200, A200);
+$material-rnd-accent : mat-palette($mat-pink, 100, 200, A200);
+$material-rnd-warn : mat-palette($mat-red, 600, 800, A200);
+
+$material-rnd-theme: 
+    mat-light-theme(
+      $material-rnd-primary, 
+      $material-rnd-accent, 
+      $material-rnd-warn
+      );

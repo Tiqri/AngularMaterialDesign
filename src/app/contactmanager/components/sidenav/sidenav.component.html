@@ -12,12 +12,12 @@
     </mat-list-item>
   </mat-nav-list>
    <p>
-      <button mat-button (click)="drawer.toggle()">Close</button>
+      <button class="side-nav-close" mat-button (click)="drawer.toggle()">Close</button>
     </p>
   </mat-drawer>
 
  <mat-drawer #rightDrawer class="example-sidenav mat-elevation-z10" mode="over" position="end" (keydown.escape)="close('escape')">
-  <mat-toolbar color="primary" >Employees</mat-toolbar>
+  <mat-toolbar  >Employees</mat-toolbar>
 
   <mat-nav-list>  
     <mat-list-item *ngFor="let user of users | async">
@@ -34,10 +34,10 @@
 
   <div>
     <app-toolbar (toggleTheme)="toggleTheme()" (toggleSideNav)="drawer.toggle()"></app-toolbar>
-    <p>
-      <button mat-button (click)="drawer.toggle()">View Employees</button>
-      <button mat-button  (click)="rightDrawer.toggle()">Admin Panel</button>
-    </p>
+    <div>
+      <button mat-button (click)="drawer.toggle()">EMPLOYEES</button>
+      <button mat-button (click)="rightDrawer.toggle()">SETTINGS</button>
+    </div>
     <div class="wrapper">
       <router-outlet></router-outlet>
     </div>

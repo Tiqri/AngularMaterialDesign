@@ -1,0 +1,10 @@
+
+$primary-dark : mat-palette($mat-pink, 700);
+$accent-dark : mat-palette($mat-green);
+$warn-dark : mat-palette($mat-red);
+
+$material-rnd-theme-dark: 
+              mat-dark-theme(
+                  $primary-dark, 
+                  $accent-dark, 
+                  $warn-dark);

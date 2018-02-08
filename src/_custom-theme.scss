@@ -1,0 +1,29 @@
+// Import all the tools needed to customize the theme and extract parts of it
+@import '~@angular/material/theming';
+
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$my-theme-primary: mat-palette($mat-red);
+$my-theme-accent: mat-palette($mat-light-blue);
+$my-theme-warn: mat-palette($mat-deep-orange, A200);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$my-theme: mat-light-theme(
+    $my-theme-primary,
+    $my-theme-accent,
+    $my-theme-warn
+);
+
+// @mixin mat-form-field($theme ) {
+
+//   $primary: map-get( $theme, primary);
+//   $warn: map-get($theme, warn);
+
+//   mat-form-field {
+//     .example-sidenav {
+//      background: mat-color($primary) !important; // -> THIS IS RIGHT :)
+//     }
+//     .mat-drawer {
+//       background-color: mat-color($primary) !important;
+//     }
+//   }
+// }
