@@ -10,18 +10,18 @@
 @import  './app/contactmanager/components/sidenav/sidenav.component.theme.scss';
 
 
-@mixin custom-component-themes { 
+@mixin custom-component-themes($theme) { 
   @include sidenav-component-theme($theme);
 }
 
 
   @include angular-material-theme($material-rnd-theme);
-  @include sidenav-component-theme($material-rnd-theme);
+  @include custom-component-themes($material-rnd-theme);
 
 
 .dark-theme {
   @include angular-material-theme($material-rnd-theme-dark);
-  @include sidenav-component-theme($material-rnd-theme-dark);
+  @include custom-component-themes($material-rnd-theme-dark);
 }
 
 // // you only have to add additional componenets here (instead of in every theme class)
