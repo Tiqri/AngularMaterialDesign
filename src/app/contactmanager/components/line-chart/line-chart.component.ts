@@ -65,6 +65,7 @@ export class LineChartComponent implements OnInit {
   public chartClicked(e:any):void {
   }
  
+ // chart hovered  
   public chartHovered(e:any):void {
   }
 
